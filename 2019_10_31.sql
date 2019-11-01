@@ -186,9 +186,9 @@ WHERE mgr != 7698
 
 -- IN, NOT IN 연산자의 NULL 처리
 -- emp 테이블에서 관리자(mgr) 사번이 7698, 7839 또는 NULL이 아닌 직원들 조회
-            SELECT *
-            FROM emp
-            WHERE mgr NOT IN (7698, 7839, NULL); --NULL 값이 있으면 무시해버린다. 주의할 것.
+SELECT *
+FROM emp
+WHERE mgr NOT IN (7698, 7839, NULL); --NULL 값이 있으면 무시해버린다. 주의할 것.
             
 -- IN 연산자에서 결과값에 NULL이 있을 경우 의도하지 않은 동작을 한다.
 SELECT *
