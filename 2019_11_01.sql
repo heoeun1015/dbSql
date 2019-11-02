@@ -173,7 +173,7 @@ FROM
 (SELECT empno, ename, sal   -- LOWNUM을 뒤에 넣어도 된다.
 FROM emp
 ORDER BY sal) a ;
--- () 안을 인라인 듀오.. 라고 한다. 하나의 테이블.
+-- () 안을 인라인 뷰(lnline view) 라고 한다. 하나의 테이블.
 -- 이 테이블에 있는 컬럼을 조회를 해라, 라는 의미와 같다.
 
 
@@ -223,7 +223,7 @@ FROM DUAL;
 
 SELECT 'HELLO WORLD' as msg
 FROM emp;
--- 데이터로 실험을 해야 하는데, 꼭 굳이 해당 테이블만큼 실행시킬 수 없으므로 그때 DUAKL을 이용한다.
+-- 데이터로 실험을 해야 하는데, 꼭 굳이 해당 테이블만큼 실행시킬 수 없으므로 그때 DUAL을 이용한다.
 
 
 -- 문자열 대소문자 관련 함수

@@ -114,6 +114,7 @@ WHERE userid = 'brown';
 
 
 -- ■ usernm 이 샐리인 데이터를 조회하는 쿼리를 작성 ------------------
+-- users 테이블
 SELECT *
 FROM users
 WHERE userid = 'sally';
