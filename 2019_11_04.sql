@@ -239,7 +239,7 @@ WHERE ename = 'SMITH';
 desc emp;
 SELECT ename, TO_CHAR(hiredate, 'YYYY/MM/DD HH24:MI:SS') as hiredate,
               TO_CHAR(TRUNC(hiredate, 'YYYY'), 'YYYY/MM/DD HH24:MI:SS') as trunc_yyyy,
-              TO_CHAR(TRUNC(hiredate, 'MM'), 'YYYY/MM/DD HH24:MI:SS') as trunc_mm,       -- 반올림을 하면 한 달이 넘어간다.
+              TO_CHAR(TRUNC(hiredate, 'MM'), 'YYYY/MM/DD HH24:MI:SS') as trunc_mm,
               TO_CHAR(TRUNC(hiredate, 'DD'), 'YYYY/MM/DD HH24:MI:SS') as trunc_dd,
               TO_CHAR(TRUNC(hiredate - 2, 'MM'), 'YYYY/MM/DD HH24:MI:SS') as trunc_mm
 FROM emp
@@ -248,13 +248,21 @@ WHERE ename = 'SMITH';
 
 -- 날짜 연산 함수
 -- MONTHS_BETWEEN(DATE, DATE): 두 날짜 사이의 개월수 
--- 19801217 ~  20191104 → 20191117
+-- 19801217 ~  20191104 → 20191117 
 SELECT ename, TO_CHAR(hiredate, 'YYYY/MM/DD HH24:MI:SS') hiredate,
               MONTHS_BETWEEN(SYSDATE, hiredate) month_between,
-              MONTHS_BETWEEN(TO_DTAE('20191117','YYYYMMDD'), hiredate) months_between
+              MONTHS_BETWEEN(TO_DTAE('20191117', 'YYYYMMDD'), hiredate) months_between
 FROM emp
 WHERE ename = 'SMITH';
 
+SELECT ename, TO_CHAR(hiredate, 'YYYY/MM/DD HH24:MI:SS') hiredate,
+              MONTHS_BETWEEN(SYSDATE, hiredate) month_between,
+              MONTHS_BETWEEN(TO_DATE('20191117', 'YYYYMMDD'), hiredate) months_between
+FROM emp
+WHERE ename = 'SMITH';
+
+SELECT MOD(467, 12)
+FROM DUAL;
 
 -- ADD_MONTHS(DATE, 개월 수): DATE에 개월 수가 지난 날짜
 -- 개월 수가 양수일 경우 미래, 음수일 경우 과거
