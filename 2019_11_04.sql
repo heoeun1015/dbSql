@@ -173,7 +173,7 @@ SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') 날짜,
 FROM dual;
 
 
--- Function (date 실습 fn1 -----------------------------------------------------------------------------------------------------------------------
+-- ■ Function (date 실습 fn1) --------------------------------------------------------------------------------------------------------------------
 -- Function (date 실습 fn1)
 -- 1. 2019년 12월 31일을 date형으로 표현
 -- 2. 2019년 12월 31일을 date형으로 표현하고 5일 이전 날짜
@@ -211,7 +211,7 @@ SELECT TO_CHAR(TO_DATE('35/03/01', 'RR/MM/DD'), 'YYYY/MM/DD') r1,
 FROM dual;  
 
 
--- Function (date 실습 fn2 -----------------------------------------------------------------------------------------------------------------------
+-- ■ Function (date 실습 fn2) --------------------------------------------------------------------------------------------------------------------
 -- 오늘 날짜를 다음과 같은 포맷으로 조회하는 쿼리를 작성하시오.
 -- 1. 년-월-일
 -- 2. 년-월-일 시간(24) -분 -초
@@ -249,12 +249,6 @@ WHERE ename = 'SMITH';
 -- 날짜 연산 함수
 -- MONTHS_BETWEEN(DATE, DATE): 두 날짜 사이의 개월수 
 -- 19801217 ~  20191104 → 20191117 
-SELECT ename, TO_CHAR(hiredate, 'YYYY/MM/DD HH24:MI:SS') hiredate,
-              MONTHS_BETWEEN(SYSDATE, hiredate) month_between,
-              MONTHS_BETWEEN(TO_DTAE('20191117', 'YYYYMMDD'), hiredate) months_between
-FROM emp
-WHERE ename = 'SMITH';
-
 SELECT ename, TO_CHAR(hiredate, 'YYYY/MM/DD HH24:MI:SS') hiredate,
               MONTHS_BETWEEN(SYSDATE, hiredate) month_between,
               MONTHS_BETWEEN(TO_DATE('20191117', 'YYYYMMDD'), hiredate) months_between
