@@ -109,7 +109,6 @@ SELECT  empno, ename, job, sal,
                                         'PRESIDENT', sal * 1.20, sal) decode_sal
 FROM emp;
 
-
 -- ■ Function (condition 실습 cond1) -----------------------------------------------------------------------------------------------------------
 -- emp 테이블을 이용하여  deptno에 따라 부서명으로 변경해서 다음과 같이 조회되는 쿼리를 작성하세요.
 -- 10 → 'ACCOUNTING', 20 → 'RESEARCH', 30 → 'SALES', 40 → 'OPERATIONS', 기타 다른 값 → 'DDIT'
