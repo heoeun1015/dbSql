@@ -207,8 +207,7 @@ WHERE  b.empno = a.mgr
 
 
 
-
--- non-equijoing (등식 조인이 아닌 경우)
+-- non-equi joing (등식 조인이 아닌 경우)
 SELECT *
 FROM salgrade;
 
