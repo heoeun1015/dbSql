@@ -217,12 +217,6 @@ FROM customer, product, cycle
 WHERE customer.cid = cycle.cid
     AND cycle.pid = product.pid
 GROUP BY customer.cid, cnm, cycle.pid, pnm;
-
-SELECT customer.cid, cnm, cycle.pid, pnm, cnt
-FROM customer, product, cycle
-WHERE customer.cid = cycle.cid
-    AND cycle.pid = product.pid;
-GROUP BY customer.cid, cnm, cycle.pid, pnm;
     
 --SELECT customer.cid cc, cnm, a.pid, pnm, cnt
 --FROM customer JOIN a ON (a.cid = customer.cid)
