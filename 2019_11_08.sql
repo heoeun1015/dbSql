@@ -251,3 +251,14 @@ WHERE deptno IN (SELECT deptno
                             WHERE ename IN ('SMITH', 'WARD'));
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+select ename, round(avg(sal),2) as avg from emp
+where as > sal
+group by ename;
+
+
+
+
+
+
+
+
