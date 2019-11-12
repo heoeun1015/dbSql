@@ -154,5 +154,22 @@ FROM employees, jobs, employees b
 WHERE employees.job_id = jobs.job_id
         AND employees.employee_id = b.manager_id
         AND b.manager_id = 100;
+        
+SELECT b.manager_id, a.employee_id, a.first_name || a.last_name name, a.job_id, job_title
+FROM employees a, jobs, employees b
+WHERE a.job_id = jobs.job_id
+    AND a.employee_id = b.manager_id
+    AND b.manager_id = 100;
+
+SELECT a.manager_id, a.employee_id, a.first_name, b.first_name, a.job_id
+FROM employees a, employees b, jobs
+WHERE a.employee_id = b.manager_id
+    AND a.job_id = jobs.job_id
+    AND a.manager_id = 100;
+    
+SELECT employees.employee_id, employees.first_name || employees.last_name name, employees.job_id, job_title
+FROM employees, jobs, employees b
+WHERE employees.job_id = jobs.job_id
+    AND employees.employee_id = b.manager_id;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
