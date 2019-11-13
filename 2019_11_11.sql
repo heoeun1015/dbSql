@@ -23,7 +23,7 @@ FROM emp
 ORDER BY sal;
 
 -- SMITH와 WARD보다 급여가 높은 직원 조회
--- SMITH보다도 급여가 높고 WARD보다도급여가 높은 사람 (AND)
+-- SMITH보다도 급여가 높고 WARD보다도 급여가 높은 사람 (AND)
 SELECT *
 FROM emp
 WHERE sal < any (SELECT sal     -- 800, 1250      → 1250보다 작은 급여를 받는 사람
