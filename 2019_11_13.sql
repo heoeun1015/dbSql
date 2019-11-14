@@ -401,6 +401,7 @@ ALTER TABLE emp ADD CONSTRAINT uk_emp_test PRIMARY KEY (empno);
         deptno NUMBER(2)
 );
  
+  DESC dept;
  DESC emp_test;
  
  ALTER TABLE emp_test ADD CONSTRAINT fk_emp_test_dept FOREIGN KEY (deptno)
@@ -408,6 +409,12 @@ ALTER TABLE emp ADD CONSTRAINT uk_emp_test PRIMARY KEY (empno);
 -- ALTER TABLE emp_test DROP CONSTRAINT fk_emp_dept;
  
 
+
+SELECT *
+FROM dept;
+
+SELECT *
+FROM emp_test;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -429,10 +436,10 @@ ALTER TABLE emp ADD CONSTRAINT uk_emp_test PRIMARY KEY (empno);
  
  
  -- NOT NULL 제약 추가
- -- ALTER TABLE emp_test MODIFY ( ename NOT NULL );
+  ALTER TABLE emp_test MODIFY ( ename NOT NULL );
  
  -- NOT NULL 제약 제거 (NULL 허용?)
- -- ALTER TABLE emp_test MODIFY ( ename NULL );
+  ALTER TABLE emp_test MODIFY ( ename NULL );
  
  
  
