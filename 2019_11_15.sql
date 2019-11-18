@@ -306,6 +306,7 @@ DROP INDEX idx2_emp_test;
 -- ■ DDL (index 실습 idx3) -----------------------------------------------------------------------------------------------------------------------
 -- 시스템에서 사용하는 쿼리가 다음과 같다고 할 때 적절한 emp 테이블에 필요하다고 생각되는 인덱스의 생성 스크립트를
 -- 만들어보세요.
+
 SELECT *
 FROM emp
 WHERE empno = 7298;
@@ -330,6 +331,9 @@ FROM emp A, emp B
 WHERE A.mgr = B.empno
     AND A.deptno = 30;
 
+SELECT *
+FROM TABLE(dbms_xplan.display);
+
 ALTER TABLE emp ADD CONSTRAINT pk_emp_idxtest1 PRIMARY KEY (empno);
 
 CREATE INDEX idx_emp_test_1 ON emp (ename);
@@ -337,4 +341,5 @@ CREATE INDEX idx_emp_test_2 ON emp (deptno);
 CREATE INDEX idx_emp_test_3 ON emp (deptno, mgr);
 -- CREATE INDEX idx_dept_test_1 ON dept (deptno); -- 이미 PRAIMARY KEY 가 있음.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
