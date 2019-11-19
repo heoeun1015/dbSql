@@ -210,7 +210,7 @@ CREATE TABLE emp_test(
 CREATE SEQUENCE seq_emp_test;
 
 --INSERT INTO emp_test VALUES ( 중복되지 않는 값, 'brown');
-INSERT INTO emp_test VALUES ( seq_emp_test.nextval, 'brown');
+INSERT INTO emp_test (empno) VALUES ( seq_emp_test.nextval);
 
 SELECT seq_emp_test.nextval
 FROM dual;
