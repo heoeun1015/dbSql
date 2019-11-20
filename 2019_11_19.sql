@@ -287,7 +287,7 @@ FROM emp;
 -- group by의 서브 그룹을 생성
 -- GROUP BY ROLLUP ( {col,} )
 -- 컬럼을 오른쪽에서부터 제거해가면서 나온 서브그룹을 GROUP BY 하여 UNION 한 것과 동일
--- ex) GROUP BY ROLLUP (job, depno)
+-- ex) GROUP BY ROLLUP (job, deptno)
 --       GROUO  BY job, deptno
 --       UNION
 --       GROUO  BY job
