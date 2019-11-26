@@ -113,6 +113,24 @@ WHERE a.j_rn = b.j_rn;
 
 
 
+SELECT deptno, COUNT(*) cnt --3, 5, 6
+FROM emp
+GROUP BY deptno;
+
+SELECT ROWNUM rn --1~14
+FROM emp;
+
+SELECT a.deptno, b.rn 
+ FROM (SELECT deptno, COUNT(*) cnt --3, 5, 6
+             FROM emp
+             GROUP BY deptno )a,
+(SELECT ROWNUM rn --1~14
+ FROM emp) b
+WHERE  a.cnt >= b.rn
+ORDER BY a.deptno, b.rn
+
+
+
 SELECT ename, sal, deptno,
             ROW_NUMBER() OVER (PARTITION BY deptno ORDER BY sal DESC) rank
 FROM emp;
