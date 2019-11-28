@@ -165,32 +165,13 @@ IS
 
 BEGIN
         INSERT INTO dept_test VALUES (p_deptno, p_dname, p_loc);
+        COMMIT;
 END;
 /
 
-EXEC registdept_test('99', 'ddit', 'daejeon');
+EXEC registdept_test('99', 'ddt', 'daejeon2');
+/
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ROLLBACK;
 
