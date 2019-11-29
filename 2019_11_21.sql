@@ -56,8 +56,6 @@ SELECT  TO_CHAR(TO_DATE(:YYYYMM, 'YYYYMM') + (level - 1)) day,
 FROM dual a
 CONNECT BY LEVEL <= TO_CHAR(LAST_DAY(TO_DATE(:YYYYMM, 'YYYYMM')), 'DD');     -- 행이 반복된다.
 
-
-
 SELECT /*DECODE(d, 1, a.iw + 1, a.iw) iw,*/a.iw,
             MAX(DECODE(D, 1, dt)) sun, MAX(DECODE(D, 2, dt)) mon, MAX(DECODE(D, 3, dt)) tue, MAX(DECODE(D, 4, dt)) wed,
             MAX(DECODE(D, 5, dt)) thu, MAX(DECODE(D, 6, dt)) fri, MAX(DECODE(D, 7, dt)) sat

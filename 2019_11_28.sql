@@ -198,10 +198,10 @@ BEGIN
         LOOP
                
                 ind := v_dt(i - 1).dt - v_dt(i).dt;
-                    dbms_output.put_line (v_dt(i-1).dt);
-                    dbms_output.put_line (v_dt(i).dt);
+--                    dbms_output.put_line (v_dt(i-1).dt);
+--                    dbms_output.put_line (v_dt(i).dt);
                 sum_dt := sum_dt + ind;
-                    dbms_output.put_line (sum_dt);
+--                    dbms_output.put_line (sum_dt);
                 i := i - 1;
                 
                 EXIT WHEN i <= 1;
@@ -305,7 +305,18 @@ END;
 
 
 -- 파라미터가 있는 명시적 커서
-
+DECLARE
+        CURSOR emp_cursor (p_job emp.job%TYPE) IS
+                SELECT empno, ename, job FROM emp WHERE job  = p_job;
+--        v_empno emp.empno%TYPE;       -- 쓰긴 했는데 필요 없을듯
+--        v_ename emp.ename%TYPE;
+--        v_job emp.job%TYPE;
+BEGIN
+        FOR emp IN emp_cursor ('SALESMAN') LOOP
+                dbms_output.put_line (emp.empno || ', ' || emp.ename || ', ' || emp.job);
+        END LOOP;
+END;
+/
 
 
 
